@@ -37,16 +37,21 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Keep anchor targets clear of the fixed header */
   font-family: var(--font-text);
   color: var(--color-noir-doux);
   background-color: var(--color-creme);
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%; /* Avoid iOS bumping font sizes on rotation */
+  overflow-x: hidden;
 }
 
 body {
   /* Subtle paper texture effect can be added here if needed, or left clean */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Safety net so nothing can trigger horizontal scroll on phones */
+  overflow-wrap: break-word; /* Long words / emails wrap instead of pushing the layout wide */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,7 +88,16 @@ button {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  /* max() keeps the gutter but also respects notch/safe areas in landscape */
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: max(18px, env(safe-area-inset-left));
+    padding-right: max(18px, env(safe-area-inset-right));
+  }
 }
 
 .section-padding {
@@ -104,9 +118,11 @@ button {
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
+  min-height: 48px; /* Comfortable, accessible tap target on touch screens */
   border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 1rem;
+  line-height: 1.2;
   transition: var(--transition-smooth);
 }
 
@@ -169,6 +185,15 @@ button {
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
   }
 }
 

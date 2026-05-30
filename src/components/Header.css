@@ -129,6 +129,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
   color: var(--color-blanc-casse);
   z-index: 1001;
   transition: color 0.3s ease;

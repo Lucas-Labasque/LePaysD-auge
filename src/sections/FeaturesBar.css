@@ -26,7 +26,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-  
+
   .features-grid > :last-child {
     grid-column: 1 / -1;
     max-width: 200px;
@@ -76,4 +76,14 @@
   font-size: 0.9375rem;
   color: var(--color-noir-doux);
   line-height: 1.4;
+}
+
+/* Placed AFTER the base .feature-card so it wins the cascade on phones.
+   The desktop flex layout needs a 180px floor, but the 2-col mobile grid must be
+   allowed to shrink, otherwise the cards overflow and get clipped below ~412px. */
+@media (max-width: 768px) {
+  .feature-card {
+    min-width: 0;
+    padding: 28px 16px;
+  }
 }

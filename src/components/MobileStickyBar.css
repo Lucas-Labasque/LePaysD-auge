@@ -34,8 +34,8 @@
     color: var(--color-blanc-casse);
   }
 
-  /* Add padding to body so content doesn't hide behind the sticky bar */
+  /* Push content up so it never hides behind the bar, including the iPhone home-indicator area */
   body {
-    padding-bottom: 60px;
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
   }
 }
