@@ -1,0 +1,41 @@
+/* MobileStickyBar.css */
+.mobile-sticky-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-sticky-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-blanc-casse);
+    box-shadow: 0 -4px 20px rgba(30, 27, 24, 0.08);
+    z-index: 998;
+    padding-bottom: env(safe-area-inset-bottom); /* For iPhone notch */
+  }
+
+  .sticky-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    gap: 4px;
+    color: var(--color-noir-doux);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .sticky-action.primary {
+    background-color: var(--color-rouge-pomme);
+    color: var(--color-blanc-casse);
+  }
+
+  /* Add padding to body so content doesn't hide behind the sticky bar */
+  body {
+    padding-bottom: 60px;
+  }
+}

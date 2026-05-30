@@ -1,0 +1,82 @@
+/* Storytelling.css */
+.storytelling {
+  background-color: var(--color-blanc-casse);
+}
+
+.storytelling-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .storytelling-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.storytelling-image-wrapper {
+  position: relative;
+  padding-bottom: 24px;
+  padding-right: 24px;
+}
+
+.storytelling-image {
+  border-radius: var(--radius-card);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-hover);
+}
+
+.storytelling-decoration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  background-color: var(--color-creme);
+  border-radius: var(--radius-card);
+  z-index: 1;
+  border: 1px solid rgba(138, 90, 54, 0.2);
+}
+
+.storytelling-text {
+  font-size: 1.125rem;
+  color: rgba(30, 27, 24, 0.8);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.quote-card {
+  background-color: var(--color-brun-cidre);
+  padding: 32px;
+  border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-family: var(--font-title);
+  font-size: 8rem;
+  color: rgba(255, 253, 248, 0.1);
+  line-height: 1;
+}
+
+.quote-text {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-style: italic;
+  color: var(--color-blanc-casse);
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,93 @@
+/* LifeStyle.css */
+.lifestyle {
+  background-color: var(--color-blanc-casse);
+}
+
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .lifestyle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lifestyle-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  transition: var(--transition-smooth);
+}
+
+.lifestyle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.lifestyle-card.large {
+  grid-row: span 2;
+  min-height: 600px;
+}
+
+.lifestyle-card.medium {
+  min-height: 288px;
+}
+
+@media (max-width: 992px) {
+  .lifestyle-card.large {
+    grid-row: auto;
+    min-height: 400px;
+  }
+}
+
+.lifestyle-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lifestyle-card:hover .lifestyle-bg {
+  transform: scale(1.05);
+}
+
+.lifestyle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(30, 27, 24, 0.9) 0%, rgba(30, 27, 24, 0.2) 100%);
+  z-index: 2;
+}
+
+.lifestyle-content {
+  position: relative;
+  z-index: 3;
+  color: var(--color-blanc-casse);
+}
+
+.lifestyle-title {
+  font-size: 2rem;
+  color: var(--color-blanc-casse);
+  margin-bottom: 12px;
+}
+
+.lifestyle-text {
+  font-size: 1.0625rem;
+  color: rgba(255, 253, 248, 0.9);
+  max-width: 400px;
+}

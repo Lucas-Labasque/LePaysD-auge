@@ -1,0 +1,100 @@
+/* FinalCTA.css */
+.final-cta {
+  position: relative;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 80px 0;
+  }
+}
+
+.final-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.final-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(30, 27, 24, 0.7), rgba(30, 27, 24, 0.8));
+  z-index: 2;
+}
+
+.final-cta-container {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.final-cta-content {
+  max-width: 700px;
+  background-color: rgba(255, 253, 248, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 60px 40px;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(255, 253, 248, 0.1);
+}
+
+@media (max-width: 576px) {
+  .final-cta-content {
+    padding: 40px 20px;
+  }
+}
+
+.final-cta-title {
+  color: var(--color-blanc-casse);
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .final-cta-title {
+    font-size: 2rem;
+  }
+}
+
+.final-cta-text {
+  color: rgba(255, 253, 248, 0.9);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+}
+
+@media (max-width: 576px) {
+  .final-cta-actions {
+    flex-direction: column;
+  }
+  .btn-large {
+    width: 100%;
+  }
+}

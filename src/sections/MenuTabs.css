@@ -1,0 +1,124 @@
+/* MenuTabs.css */
+.menu-tabs-section {
+  background-color: var(--color-blanc-casse);
+  background-image: radial-gradient(rgba(138, 90, 54, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.tabs-header {
+  margin-bottom: 48px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs-header::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.tabs-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  min-width: max-content;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .tabs-list {
+    justify-content: flex-start;
+  }
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-badge);
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: rgba(30, 27, 24, 0.6);
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--color-noir-doux);
+}
+
+.tab-btn.active {
+  background-color: var(--color-noir-doux);
+  color: var(--color-blanc-casse);
+  box-shadow: var(--shadow-soft);
+}
+
+.tab-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--color-creme);
+  padding: 48px;
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0 0 1px rgba(138, 90, 54, 0.1);
+}
+
+@media (max-width: 576px) {
+  .tab-content {
+    padding: 32px 20px;
+  }
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.menu-item-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-noir-doux);
+}
+
+.menu-item-dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--color-dore-discret);
+  opacity: 0.6;
+  position: relative;
+  top: -6px;
+}
+
+.menu-item-price {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: var(--color-brun-cidre);
+  font-weight: 600;
+}
+
+.menu-item-desc {
+  font-size: 0.9375rem;
+  color: rgba(30, 27, 24, 0.7);
+  font-style: italic;
+}
+
+.menu-footer {
+  margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-note {
+  font-size: 0.9375rem;
+  color: rgba(30, 27, 24, 0.6);
+  font-style: italic;
+}

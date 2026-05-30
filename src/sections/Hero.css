@@ -1,0 +1,142 @@
+/* Hero.css */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Offset for header */
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-noir-doux); /* Fallback */
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(30, 27, 24, 0.8) 0%, rgba(30, 27, 24, 0.4) 100%);
+  z-index: -1;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 800px;
+  color: var(--color-blanc-casse);
+  padding-top: 40px;
+}
+
+.hero-title {
+  color: var(--color-blanc-casse);
+  font-size: 4rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 253, 248, 0.9);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-badge);
+  background-color: rgba(255, 253, 248, 0.1);
+  border: 1px solid rgba(255, 253, 248, 0.2);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-blanc-casse);
+  backdrop-filter: blur(4px);
+}
+
+/* Quick Info Card */
+.hero-quick-info {
+  margin-top: 60px;
+  align-self: flex-start;
+}
+
+.quick-info-card {
+  background: var(--color-blanc-casse);
+  border-radius: var(--radius-card);
+  padding: 24px 32px;
+  display: flex;
+  gap: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .quick-info-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+.quick-info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-noir-doux);
+}
+
+.quick-info-item .icon {
+  color: var(--color-brun-cidre);
+}
+
+.quick-info-item .label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-vert-sologne);
+  margin-bottom: 4px;
+}
+
+.quick-info-item .value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}

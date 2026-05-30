@@ -1,0 +1,79 @@
+/* FeaturesBar.css */
+.features-bar {
+  padding: 80px 0;
+  background-color: var(--color-creme);
+  position: relative;
+  z-index: 10;
+  margin-top: -40px; /* Pull up over the hero slightly if desired, or keep 0 */
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .features-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .features-grid > :last-child {
+    grid-column: 1 / -1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+.feature-card {
+  background-color: var(--color-blanc-casse);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  text-align: center;
+  flex: 1;
+  min-width: 180px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-icon {
+  color: var(--color-vert-sologne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(86, 107, 63, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.feature-card:hover .feature-icon {
+  background-color: var(--color-vert-sologne);
+  color: var(--color-blanc-casse);
+}
+
+.feature-text {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-noir-doux);
+  line-height: 1.4;
+}

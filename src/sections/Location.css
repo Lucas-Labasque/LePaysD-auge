@@ -1,0 +1,110 @@
+/* Location.css */
+.location {
+  background-color: var(--color-creme);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 992px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.info-card {
+  background-color: var(--color-blanc-casse);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 576px) {
+  .info-card {
+    padding: 32px 20px;
+  }
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-icon {
+  color: var(--color-brun-cidre);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.info-title {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-vert-sologne);
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-size: 1.0625rem;
+  color: var(--color-noir-doux);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hover-link {
+  transition: var(--transition-smooth);
+}
+.hover-link:hover {
+  color: var(--color-brun-cidre);
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9375rem;
+  border-bottom: 1px dotted rgba(138, 90, 54, 0.2);
+  padding-bottom: 4px;
+}
+
+.hours-day {
+  font-weight: 600;
+  color: var(--color-noir-doux);
+}
+
+.hours-time {
+  color: rgba(30, 27, 24, 0.8);
+}
+
+.location-actions {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .location-actions {
+    flex-direction: column;
+  }
+}
+
+.location-map {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  min-height: 400px;
+}
